@@ -1,32 +1,28 @@
-# About
+﻿Sakura🌸: A Wonderful WordPress Theme
+===
 
-This is my blog based on jekyll. And I change the style and interactive. If you want to use this model of the blog. **Please give a star at this repository**. Then you can clone it as your blog model.
+![Sakura](https://view.moezx.cc/images/2018/05/26/sakura.png)
 
-You can visit [here](http://gaohaoyang.github.io) to see this blog.
+![PHP version](https://img.shields.io/badge/PHP-7.1+-4F5B93.svg?style=flat-square)
+![WP version](https://img.shields.io/badge/WordPress-5.0+-0073aa.svg?style=flat-square)
+[![GitHub release](https://img.shields.io/github/release/mashirozx/Sakura.svg?style=flat-square)](https://github.com/mashirozx/Sakura/releases/latest)
+[![Github commits (since latest release)](https://img.shields.io/github/commits-since/mashirozx/Sakura/latest.svg?style=flat-square)](https://github.com/mashirozx/Sakura/commits/)
+[![](https://data.jsdelivr.com/v1/package/gh/moezx/cdn/badge)](https://www.jsdelivr.com/package/gh/moezx/cdn)
 
----
+在 Louie 基于 Fuzzz 的 [Akina](http://www.akina.pw/themeakina) 主题修改的主题 [Siren](https://github.com/louie-senpai/Siren) 基础上三次修改 =.=
 
-这是我的博客，基于 jekyll。我改了所有默认的样式和交互。如果你想使用这个博客模板。**请先在这个仓库上点个star吧**，这也是对我的肯定和鼓励，谢谢了。然后你可以克隆这个仓库用作你自己的博客。
+两位前辈做得已经很棒了，或许我所做的只是把他们的代码弄得凌乱不堪吧 :)
 
-博客访问地址：[点击这里](http://gaohaoyang.github.io)
+注意：建议 `git clone` 下载（[简易 Git 使用指南](https://github.com/mashirozx/Sakura/wiki/Git-%E4%B8%8B%E8%BD%BD%E3%80%81%E6%9B%B4%E6%96%B0%E6%8C%87%E5%8D%97)）；如果选择下载压缩包，解压后记得把文件夹名改回 `Sakura`，也即保证主题路径为 `/wp-content/themes/Sakura/`；请安装必装插件 [WP Statistics](https://wordpress.org/plugins/wp-statistics/)；请留意主题说明里的其他注意事项。
 
-**使用时请注明模板来源:  Jekyll theme by [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io)**
+主题使用说明见：<https://2heng.xin/theme-sakura/>
 
-<!--
+本仓库国内镜像：<https://gitee.com/mashirozx/Sakura>
 
-## 被引用信息
+希望你喜欢！
 
-使用了我的模板并写明来源的人：   
+### 打赏支持~
+[微信支付](https://view.moezx.cc/images/2018/05/28/WeChanQR.png) | [支付宝](https://view.moezx.cc/images/2018/05/28/AliPayQR.jpg) | [PayPal](https://paypal.me/mashirozx)
 
-* [dreamholy](http://dreamholy.github.io/)
-
-没有注明来源的人：
-
-* [yangshuailing](http://yangshuailing.github.io/com/)
-* [huapu728](http://huapu728.github.io/)
-* [greatbuger](http://greatbuger.github.io/) 
-
-
--->
-
-
+### 需要服务器吗？
+<a href="https://www.vultr.com/?ref=7674346"><img src="https://www.vultr.com/media/banner_3.png" width="300" height="250"></a>
