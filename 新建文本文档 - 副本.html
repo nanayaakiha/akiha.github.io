@@ -1,0 +1,73 @@
+<style>
+    *{margin:0;padding:0;}
+    ul,li{list-style: none;}
+    #d{width:200px;height:200px;overflow:hidden;position: relative;}
+    a{position: absolute;z-index: 2;}
+    #pre{left:0;top:90px;}
+    #next{right:0;top:90px;}
+    #u{height:200px;position: absolute;left:0;top:0;}
+    #u li{width:200px;height:200px;float:left;}
+</style>
+<div id="d">
+    <a id="pre">上一个</a>
+    <a id="next">下一个</a>
+    <ul id="u">
+        <li style="background:green;"><img src=""></li>
+        <li style="background:red;"></li>
+        <li style="background:blue;"></li>
+    </ul>
+</div>
+
+<script>
+    window.onload = function(){
+        var oPre = document.getElementById("pre");
+        var oNext = document.getElementById("next");
+        var oD = document.getElementById("d");
+        var oU = document.getElementById("u");
+        var aLi = oU.getElementsByTagName("li");
+        var timer = null;
+        var now = 0;
+
+        oU.style.width = aLi.length*aLi[0].clientWidth+"px";
+
+        function tab(){
+		//这个地方用jquery的animate方法,不然只能重新写js模拟
+		//$(oU).animate({left: -aLi[0].clientWidth*now+'px'});
+oU.style.left = -aLi[0].clientWidth*now+"px";
+  	} 
+	
+function prev(){
+    now--;
+    if(now==-1){
+        now = aLi.length-1;
+    }
+    tab();
+}
+function next(){
+    now++;
+    if(now==aLi.length){
+        now = 0;
+    }
+    tab();
+}
+oPre.onclick = function(){
+    prev();
+};
+oNext.onclick = function(){
+    next();
+};
+clearInterval(timer);
+timer = setInterval(next,4000);
+oD.onmouseover = function(){
+    clearInterval(timer);
+};
+oD.onmouseout = function(){
+    timer = setInterval(next,4000);
+};
+ };
+</script>
+--------------------- 
+作者：行者乐途 
+来源：CSDN 
+原文：https://blog.csdn.net/qq_35478948/article/details/78956945 
+版权声明：本文为博主原创文章，转载请附上博文链接！
