@@ -1,0 +1,278 @@
+<html>
+<!--自用-->
+<!DOCTYPE html>
+<head>
+	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="assets/waifu.min.css?v=1.4.2"/>
+	<title>自用菜单</title>
+	<style>
+		body
+		{
+			background-image:url('B_G/久远寺1.png') ;
+			//background-color:black;
+			background-repeat:no-repeat; /*水平平铺*/
+			background-size:100% 100%;
+			//background-position: 0% 95%;
+		}
+		h2  
+		{
+			width:125px;height:35px;background-color:red;opacity:0.6;border-radius:10px;
+		}
+		div.Kuonji
+		{
+			padding:10px;
+		}
+		*
+		{
+			padding:0;
+			margin:0;
+			text-decoration:none;
+			cursor: url('指针/zhen.png'), default !important;
+		}
+		ul.caidan
+		{
+			opacity:0.9;
+			width:100%;
+			height:50px;
+			background-color:0099FF;
+			
+			position:fixed;		/*锁定*/
+		}
+		ul.caidan li
+		{	
+			width:100px;
+			height:50px;
+			float:left;			
+			line-height:50px;
+			text-align:center;
+
+			cursor:pointer;
+			transition:1s;		
+			list-style:none;
+		}
+		ul.caidan li:hover
+		{
+			background-color:6633CC;
+		}
+		
+		ul.caidan ul.SecondMenu li
+		{
+			background-color:FF6633;
+			display:none;					
+		}
+		ul.caidan li:hover .SecondMenu li	
+		{
+			display:block;
+		}	
+		
+		ul.caidan ul.SecondMenu a
+		{
+			display:block;
+		}
+		ul.caidan ul.SecondMenu a:hover
+		{
+			background-color:0099FF;
+			color:white;
+		}
+		
+		#Satsuki
+		{
+			border-radius:25px;
+		}
+		#Kuonji
+		{
+			right:0px;
+			bottom:0px;
+			position:absolute;
+			max-width:300px;
+			max-height:350px;
+			position:fixed;
+			
+		}
+		#saber
+		{
+			left:0px;
+			bottom:0px;
+			position:absolute;
+			max-width:300px;
+			max-height:400px;
+			position:fixed;
+		}
+		#relive
+		{
+			text-align: center;
+			top:130px;
+			position: relative;
+		}
+		#relive img{
+			max-width:60%;
+		}
+		#lu{
+			text-align: center;
+			position: relative;
+		}
+		#lu img
+		{
+			
+			position: relative;
+			max-width: 13%;
+			animation: zhuan 10s linear infinite;
+		}
+		@keyframes zhuan{
+			form{
+				-webkit-transform: rotate(0deg);
+			}
+			to{
+				-webkit-transform: rotate(360deg);
+			}
+		}
+	</style>
+	
+	<script>
+	
+
+		function Kchange()//换图
+		{
+			var s = document.getElementById('Kuonji');
+			s.src = s.src.match('Kuonji1')? "Kuonji2.png" : "Kuonji1.png";
+		}
+		function Rchange(x)
+		{
+			var rand = new Array();
+			var i;
+			for(i=0;i<6;i++)
+				rand[i]=i+".png";
+			var rpng=Math.round(Math.random()*4);
+			x.src="saber/"+rand[rpng];
+		}
+		function shubiao(x)
+		{
+			x.src="satsuki_04.png";
+		}
+		function noshubiao(x)
+		{
+			x.src="satsuki_02.png";
+		}
+		/*function join()
+		{
+			x=Date();
+			alert("今天是"+x);
+		}*/
+		function random()
+		{
+			var Gif = new Array(); 
+			var i;
+			for (i=0;i<5;i++)
+				Gif[i]="GIF/"+i+".gif";
+			var rGif=Math.round(Math.random()*4);
+			document.getElementById("r").src=Gif[rGif];
+		}
+		
+	</script>
+</head>
+<body onload="random()"></body>
+	
+	<div>
+		<ul class="caidan" >
+			<li><a href="http://typemoon.com/">首页</a></li>
+			<li>动画
+				<ul class="SecondMenu">
+					<li><a href="https://www.bilibili.com" target="_black">BiliBili</a><hr></li>
+					<li><a href="http://www.dilidili.wang/" target="_black">嘀哩嘀哩</a><hr></li>
+					<li><a href="http://www.acfun.cn/" target="_black">ACFUN</a></li>
+				</ul>
+			</li>
+			
+			<li>漫画
+				<ul class="SecondMenu">
+					<li><a href="https://i.dmzj.com//subscribe" target="_black">动漫之家</a><hr></li>
+					<li><a href="https://tw.manhuagui.com/" target="_black">漫画柜</a><hr></li>
+					<li><a href="https://www.south-plus.net/index.php?" target="_black">南south</a></li>
+				</ul>
+			</li>
+			
+			<li>鱼塘
+			<ul class="SecondMenu">
+					<li><a href="https://bbs.saraba1st.com/2b/forum-75-1.html" target="_black">扭曲死宅泥潭</a><hr></li>
+					<li><a href="http://bbs.ngacn.cc/thread.php?fid=540" target="_black">NGA<hr></a></li>
+					<li><a href="https://www.zhihu.com/" target="_black">编乎</a><hr></li>
+					<li><a href="https://tieba.baidu.com/" target="_black">贴吧</a><hr></li>
+					<li><a href="https://weibo.com/u/5149067170/home?wvr=5&sudaref=graph.qq.com" target="_black">微博</a><hr></li>
+					<li><a href="https://www.taptap.com/app/12982/topic" target="_black">taptap</a></li>
+			</ul>
+			</li>
+			<li>文件下载
+				<ul class="SecondMenu">
+					<li><a href="https://pan.baidu.com/disk/home?#/all?path=%2F&vmode=list" target="_black">我的云盘</a><hr></li>
+					<li><a href="https://share.dmhy.org/" target="_black">动漫花园</a><hr></li>
+					<li><a href="https://nyaa.si/" target="_black">Nyaa</a></li>
+				</ul>
+			</li>
+			<li>工具
+				<ul class="SecondMenu">
+					<li><a href="https://scholar.uulucky.com/" target="_black">Google</a></li>
+					<li><a href="https://yandex.com/" target="_black">yandex</a></li>
+					<li><a href="https://fgo.wiki/w/%E9%A6%96%E9%A1%B5" target="_black">fgowiki</a><hr></li>
+					<li><a href="http://bangumi.tv/" target="_black">banggumi</a></li>
+					<li><a href="http://komicolle.dreamhosters.com/wiki5/?FrontPage" target="_black">FrontPage</a>
+					<li><a href="https://zh.moegirl.org/Mainpage" target="_black">萌娘百科</a></li>
+				</ul>
+			</li>
+			<li>Leetcode
+				<ul class="SecondMenu">
+					<li><a href="https://leetcode-cn.com/problemset/all/" target="_black">Leetcode</a></li>
+					<li><a href="">OJ</a></li>
+					<li><a href="http://www.w3school.com.cn/jquery/jquery_css_classes.asp">jQuery</a></li>
+					<li><a href="http://www.runoob.com/js/js-examples.html" target="_black">JavaScript</a></li>
+					<li><a href="https://www.nowcoder.com/acm/contest/vip-index" target="_black">牛客网</a></li>
+				</ul>
+			</li>
+			<li>里站
+				<ul class="SecondMenu">
+					<li><a href="https://nyaso.com/" target="_black">喵搜</a></li>
+					<li><a href="https://nyaa.si/" target="_black">Nyaa</a></li>
+				</ul>
+			</li>
+			<li><img id ="r" src="1.gif" width="90" height="50"></li>
+		</ul>
+	</div>
+
+	
+	<img style="margin-top:50px"  onmouseover="shubiao(this)" onmouseout="noshubiao(this)" width="150px" height="150px" src="satsuki_02.png">
+	
+	<!-- <div id="relive"><img src="relive.png" ></div> -->
+	<div id="lu"><img src="lu.png" ></div>
+	
+	
+	
+	<br>
+	<div id="ran" onclick="random()"> </div>
+	
+	<div class="waifu">
+        <canvas id="live2d" class="live2d"></canvas>
+	</div>
+	<div ><img id="saber" onclick="Rchange(this)" src="saber/0.png" ></div>
+	
+</body>
+</html>
+<script src="assets/jquery.min.js?v=3.3.1"></script>
+
+<script src="assets/waifu-tips.min.js?v=1.4.2"></script>
+<script src="assets/live2d.min.js?v=1.0.5"></script>
+<script type="text/javascript">
+	/* 可直接修改部分参数 */
+	live2d_settings['modelId'] = 1;                  // 默认模型 ID
+	live2d_settings['modelTexturesId'] = 87;         // 默认材质 ID
+	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
+	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
+	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
+	live2d_settings['waifuSize'] = '600x535';        // 看板娘大小
+	live2d_settings['waifuTipsSize'] = '570x150';    // 提示框大小
+	live2d_settings['waifuFontSize'] = '30px';       // 提示框字体
+	live2d_settings['waifuToolFont'] = '36px';       // 工具栏字体
+	live2d_settings['waifuToolLine'] = '50px';       // 工具栏行高
+	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
+	live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
+	/* 在 initModel 前添加 */
+	initModel("assets/waifu-tips.json?v=1.4.2")</script>

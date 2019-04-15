@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+	body{background-color:green;}
+	.huandeng{display:none}
+	.all
+	{
+		max-width:2000px;
+		width:20%;
+		position:relative;
+		
+	}
+	.last,.next
+	{
+		cursor:pointer; /*鼠标移动到其上时的光标*/
+		position:absolute; 
+		width:auto;
+		
+		color:white;
+		font-size:50px;
+	}
+	.next
+	{
+		right:0;
+	}
+	.next:hover,.last:hover
+	{
+		transition:1ds;
+		background-color:black;
+	}
+</style>
+
+<script>
+	var slideIndex = 1;
+		showSlides(slideIndex);
+
+	function LAST1(n) 
+	{
+		showSlides(slideIndex += n);
+	}
+
+	function NEXT1(n) 
+	{
+		showSlides(slideIndex = n);
+	}
+
+	function showSlides(n)
+	{
+		var i;
+		var slides = document.getElementsByClassName("numbertext");
+  
+		if (n > slides.length) {slideIndex = 1} 
+		if (n < 1) {slideIndex = slides.length}
+  
+		for (i = 0; i < slides.length; i++)
+		{
+			slides[i].style.display = "none"; 
+		}
+  
+		slides[slideIndex-1].style.display = "block"; 
+	}	
+</script>
+</head>
+
+<body>
+<div class="all">
+	<div class="huandeng">
+		<div class="numebrtext"><img src="1.png"></div>
+		<div class="numebrtext"><img src="2.png"></div>
+		<div class="numbertext"><img src="3.png"></div>
+	</div>
+	<a class="last" onclick="LAST1(-1)"><b><<b></<></a>
+	<a class="next" onclick="NEXT1(-1)"><b>></b><b></<></a>
+</div>
+</body>
+</html>
