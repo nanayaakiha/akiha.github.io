@@ -70,7 +70,7 @@
         { "selector": "c-player div.volume", "text": ["在这里可以调整<span style=\"color:#0099cc;\">音量</span>呢"] },
         { "selector": "c-player div.list-button", "text": ["<span style=\"color:#0099cc;\">播放列表</span>里都有什么呢"] },
         { "selector": "c-player div.lyric-button", "text": ["有<span style=\"color:#0099cc;\">歌词</span>的话就能跟着一起唱呢"] },
-        { "selector": ".waifu #live2d", "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！"] }
+        { "selector": ".waifu #live2d", "text": ["干嘛呢你，快把手拿开", "鼠…鼠标放错地方了！","死宅别过来"] }
     ],
     "click": [
         {
@@ -80,10 +80,10 @@
                 "萝莉控是什么呀",
                 "你看到我的小熊了吗",
                 "再摸的话我可要报警了！⌇●﹏●⌇",
-                "110吗，这里有个变态一直在摸我(ó﹏ò｡)"
+                "110吗，这里有个变态一直在摸我(ó﹏ò｡)",
 				"反对996",
 				"犹豫，就会败北",
-				"点击右边的saber试试吧"
+				"点击右边的saber试试吧",
 				"手机浏览器推荐yandex哦"
             ]
         }
