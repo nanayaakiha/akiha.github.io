@@ -1,44 +1,38 @@
-`<html>
+                                           
+<html>
 <!--自用-->
 <!DOCTYPE html>
 <head>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="assets/waifu.min.css?v=1.4.2"/>
-	<title>nanaya的自用菜单</title>
+	<link rel="stylesheet" type="text/css" href="assets/waifu.css?v=1.4.2"/>
+	<title>自用菜单</title>
 	<style>
-		body
-		{
-			background-image:url('B_G/久远寺1.png') ;
-			//background-color:black;
+		body{
+			background-image:url('http://ww1.sinaimg.cn/large/005CsXAuly1g2gfu7y5rsj32yo1s07wh.jpg') ;
 			background-repeat:no-repeat; /*水平平铺*/
 			background-size:100% 100%;
-			//background-position: 0% 95%;
+			/*background-position: 0% 95%;*/
 		}
-		h2  
-		{
+		h2{
 			width:125px;height:35px;background-color:red;opacity:0.6;border-radius:10px;
 		}
-		div.Kuonji
-		{
-			padding:10px;
-		}
-		*
-		{
+		*{
 			padding:0;
 			margin:0;
 			text-decoration:none;
-			cursor: url('指针/zhen.png'), default !important;
+			/*cursor: url('指针/zhen.png'), default !important;*/
 		}
-		ul.caidan
-		{
-			top: 0%;
-			opacity:0.9;
-			width:100%;
-			height:50px;
+		.top{
 			background-color:0099FF;
-			
-			position:fixed;		/*锁定*/
+			width:auto;
+			opacity:0.9;z-index: 200;
+			position:relative;
+		}
+		ul.caidan{
+			margin-left: calc(50% - 450px);/*要加空格*/
+			width: 900px;
+			height:50px;					/*锁定*/
 		}
 		ul.caidan li
 		{	
@@ -47,7 +41,6 @@
 			float:left;			
 			line-height:50px;
 			text-align:center;
-
 			cursor:pointer;
 			transition:1s;		
 			list-style:none;
@@ -55,20 +48,17 @@
 		ul.caidan li:hover
 		{
 			background-color:6633CC;
-		}
-		
+		}	
 		ul.caidan ul.SecondMenu li
 		{
+			
 			background-color:FF6633;
 			display:none;					
 		}
-		ul.caidan li:hover .SecondMenu li	
-		{
+		ul.caidan li:hover .SecondMenu li	{
 			display:block;
 		}	
-		
-		ul.caidan ul.SecondMenu a
-		{
+		ul.caidan ul.SecondMenu a{
 			display:block;
 		}
 		ul.caidan ul.SecondMenu a:hover
@@ -76,49 +66,25 @@
 			background-color:0099FF;
 			color:white;
 		}
-		
-		#Satsuki
-		{
-			
+		#Satsuki{
+			position: absolute;
+			right: 0px;
 		}
-		#Kuonji
-		{
-			right:0px;
-			bottom:0px;
-			position:absolute;
-			max-width:300px;
-			max-height:350px;
-			position:fixed;
-			
-		}
-		#saber
-		{
-			right:0px;
+		#saber{
+			right: 0px;
 			bottom:0px;
 			position:absolute;
 			max-width:300px;
 			max-height:400px;
 			position:fixed;
 		}
-		#relive
-		{
-			text-align: center;
-			top:130px;
+		#lu{left: 50px;
 			position: relative;
+			display: inline-block;
 		}
-		#relive img{
-			max-width:60%;
-		}
-		#lu{
-			text-align: center;
-			position: relative;
-		}
-		#lu img
-		{
-			
-			position: relative;
-			max-width: 13%;
+		#lu img{
 			animation: zhuan 10s linear infinite;
+			width: 300px;
 		}
 		@keyframes zhuan{
 			form{
@@ -128,6 +94,66 @@
 				-webkit-transform: rotate(360deg);
 			}
 		}
+		*{padding:0;margin:0;}
+	.numbertext img{width: 500px;}
+	.HuanDeng{
+		width:500px;
+		height: 400px;
+		position: relative;
+		display: inline-block;
+		
+	}
+	.dots{
+		position: absolute;
+		left: 47%;
+		position: relative;
+		top: -20px;
+	}
+	.last,.next{
+		width:30px;
+		cursor:pointer; /*鼠标移动到其上时的光标*/
+		position:absolute;
+		top: calc(50% + 80px); 
+		
+		display: none;
+		color:white;
+		font-size:40px;
+		background-color:rgb(46, 39, 39);
+		opacity:0.3;
+	}
+	.next{
+		left: 470px;
+	}
+	
+	.last:hover,.next:hover{
+		transition:0.5s;
+		opacity:0.85;
+		background-color:rgb(10, 9, 9);
+	}
+	.dot{
+		position: relatiave;
+		cursor: pointer;
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background-color: #bbb;
+		margin: 0 1px;
+		display: inline-block;
+		transition:background-color 0.6s;
+	}
+	.dot:hover,
+	.NowNumber {
+  background-color: #717171;
+}
+/* 淡出动画 */
+.numbertext {
+  animation: fade;
+  animation-duration: 1.6s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 	</style>
 	
 	<script>
@@ -169,12 +195,22 @@
 			var rGif=Math.round(Math.random()*4);
 			document.getElementById("r").src=Gif[rGif];
 		}
-		
+		function shubiao1()
+			{
+				document.getElementById('last').style.display="block";
+				document.getElementById('next').style.display="block";
+			}
+			function noshubiao1()
+			{
+				document.getElementById('last').style.display="none";
+				document.getElementById('next').style.display="none";
+			}
+	
 	</script>
 </head>
 <body onload="random()"></body>
 	
-	<div>
+	<div class="top">
 		<ul class="caidan" >
 			<li><a href="http://typemoon.com/">首页</a></li>
 			<li>动画
@@ -205,9 +241,10 @@
 			</li>
 			<li>文件下载
 				<ul class="SecondMenu">
-					<li><a href="https://pan.baidu.com/disk/home?#/all?path=%2F&vmode=list" target="_black">我的云盘</a><hr></li>
+					<li><a href="https://pan.baidu.com/disk/home?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=#/all?path=%2F&vmode=list" target="_black">我的云盘</a><hr></li>
 					<li><a href="https://share.dmhy.org/" target="_black">动漫花园</a><hr></li>
 					<li><a href="https://nyaa.si/" target="_black">Nyaa</a></li>
+					<li><a href="https://share.acgnx.se/" target="_black">末日</a></li>
 				</ul>
 			</li>
 			<li>工具
@@ -236,24 +273,35 @@
 				</ul>
 			</li>
 			<li><img id ="r" src="1.gif" width="90" height="50"></li>
-		</ul>
+		</ul>	
 	</div>
 
+	<img id="satsuki"  onclick="huan()"  onmouseover="shubiao(this)" onmouseout="noshubiao(this)" src="img/satsuki/satsuki_02.png">
 	
-	<img style="margin-top:26px;"  onmouseover="shubiao(this)" onmouseout="noshubiao(this)" width="150px" height="150px" src="img/satsuki/satsuki_02.png">
-	
-	<!-- <div id="relive"><img src="relive.png" ></div> -->
-	<div id="lu"><img src="logo/lu.png" ></div>
-	
-	
-	
-	<br>
-	<div id="ran" onclick="random()"> </div>
-	
+	<div class="HuanDeng" onmouseover="shubiao1()" onmouseout="noshubiao1()">	
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/1.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/2.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/3.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/4.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/5.png"></div>	
+		<div class="last" id="last"onclick="LAST()"> &lt; </div>
+		<div class="next" id="next"onclick="NEXT()"> > </div>
+
+		<div class="dots">
+			<span class="dot" onclick="numberturn(1)"></span>
+			<span class="dot" onclick="numberturn(2)"></span> 
+			<span class="dot" onclick="numberturn(3)"></span> 
+			<span class="dot" onclick="numberturn(4)"></span> 
+			<span class="dot" onclick="numberturn(5)"></span> 
+		</div>
+	</div>
+
+	<div id="lu"><img src="img/logo/lu.png"></div>
+
 	<div class="waifu">
-        <div class="waifu-tips"></div>
+        <!-- <div class="waifu-tips"></div> -->
         <canvas id="live2d" class="live2d"></canvas>
-        <div class="waifu-tool">
+    	<!-- <div class="waifu-tool">
             <span class="fui-home"></span>
             <span class="fui-chat"></span>
             <span class="fui-eye"></span>
@@ -261,25 +309,60 @@
             <span class="fui-photo"></span>
             <span class="fui-info-circle"></span>
             <span class="fui-cross"></span>
-        </div>
+        </div> -->
     </div>
-	
-	<div ><img id="saber" onclick="Rchange(this)" src="img/saber/0.png" ></div>
+
+	<img id="saber" onclick="Rchange(this)" src="img/saber/0.png" >
 	
 </body>
 </html>
-<script src="assets/jquery-ui.min.js?v=1.12.1"></script>
-<script src="assets/jquery.min.js?v=3.3.1"></script>
-<script src="assets/waifu-tips.min.js?v=1.4.2"></script>
-<script src="assets/live2d.min.js?v=1.0.5"></script>
+<script>
+	var slideIndex = 1;
+	showSlides(slideIndex);	
+	var AutoStar = setInterval(NEXT,5000);/*自动播放*/
+	function LAST() {	
+		showSlides(slideIndex -= 1);
+	}
+	function NEXT() {
+		showSlides(slideIndex += 1);
+	}
+	function numberturn(x){
+		showSlides(slideIndex= x);
+	}
+	function showSlides(n)
+	{
+		var i;
+		var slides = document.getElementsByClassName("numbertext");
+		var dots   = document.getElementsByClassName('dot');
+		if (n > slides.length) {slideIndex = 1} 
+		if (n < 1) {slideIndex = slides.length}
+
+		//document.getElementsById('test').value=slideIndex;	
+
+		for (i = 0; i < slides.length; i++){
+			slides[i].style.display = "none"; 
+		}
+		for (i = 0; i < dots.length; i++) {
+			  dots[i].className = dots[i].className.replace(" NowNumber", "");
+		  }
+		slides[slideIndex-1].style.display = "block"; 
+
+		dots[slideIndex - 1].className += " NowNumber";
+	}	
+</script>
+<script src="assets/jquery.js?v=3.3.1"></script>
+
+<script src="assets/waifu-tips.js?v=1.4.2"></script>
+<script src="assets/live2d.js?v=1.0.5"></script>
 <script type="text/javascript">
 	/* 可直接修改部分参数 */
+	var rand = Math.round(Math.random()*87);
 	live2d_settings['modelId'] = 1;                  // 默认模型 ID
-	live2d_settings['modelTexturesId'] = Math.round(Math.random()*87);         // 默认材质 ID
+	live2d_settings['modelTexturesId'] = rand;         // 默认材质 ID
 	live2d_settings['modelStorage'] = false;         // 不储存模型 ID
 	live2d_settings['canCloseLive2d'] = false;       // 隐藏 关闭看板娘 按钮
 	live2d_settings['canTurnToHomePage'] = false;    // 隐藏 返回首页 按钮
-	live2d_settings['waifuSize'] = '600x535';        // 看板娘大小
+	live2d_settings['waifuSize'] = '480x428';        // 看板娘大小
 	live2d_settings['waifuTipsSize'] = '570x150';    // 提示框大小
 	live2d_settings['waifuFontSize'] = '30px';       // 提示框字体
 	live2d_settings['waifuToolFont'] = '36px';       // 工具栏字体
@@ -287,4 +370,5 @@
 	live2d_settings['waifuToolTop'] = '-60px';       // 工具栏顶部边距
 	live2d_settings['waifuDraggable'] = 'axis-x';    // 拖拽样式
 	/* 在 initModel 前添加 */
-	initModel("assets/waifu-tips.json?v=1.4.2")</script>
+	initModel("assets/waifu-tips.json?v=1.4.2")
+</script>
