@@ -1,11 +1,13 @@
-                                           
 <html>
-<!--自用-->
+<!--Git用菜单-->
 <!DOCTYPE html>
 <head>
 	<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.min.js"></script>
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel=icon href=http://typemoon.com/img/favicon.ico>
 	<link rel="stylesheet" type="text/css" href="assets/waifu.css?v=1.4.2"/>
+	
 	<title>自用菜单</title>
 	<style>
 		body{
@@ -78,13 +80,35 @@
 			max-height:400px;
 			position:fixed;
 		}
-		#lu{left: 50px;
+		#lu{left: 50px;top: -250px;
 			position: relative;
 			display: inline-block;
 		}
 		#lu img{
 			animation: zhuan 10s linear infinite;
 			width: 300px;
+			height: 300px;
+		}
+		.RightTiao{
+			background-image: url("img/右边条.png");
+   		 	background-position-x: 100%;
+    		background-repeat: repeat-y;
+    		background-attachment: fixed;
+    		position: fixed;
+    		z-index: 999;
+    		width: 18px;
+    		height: 100%;
+    		right: 0;
+		}
+		.LeftTiao{
+			background-image: url("img/左边条.png");
+   		 	background-position-x: 0;
+    		background-repeat: repeat-y;
+    		background-attachment: fixed;
+    		position: fixed;
+    		z-index: 999;
+    		width: 18px;
+    		height: 100%;
 		}
 		@keyframes zhuan{
 			form{
@@ -95,25 +119,66 @@
 			}
 		}
 		*{padding:0;margin:0;}
-	.numbertext img{width: 500px;}
-	.HuanDeng{
-		width:500px;
-		height: 400px;
+
+		#Dright,
+        #Dright_div {
+            position: fixed;
+            bottom: -100px;
+            right: 0px;
+
+            z-index: 1;
+        }
+
+        #MagicArray {
+
+            transition-property: width height bottom right;
+            animation-timing-function: ease-in;
+            transition-duration: 0.65s;
+            position: fixed;
+            bottom: 100px;
+            right: 140px;
+            width: 0px;
+            height: 0px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        #Tab1 {
+            transition-property: fontSize width height;
+            transition-delay: 0.55s;
+            /*与MagicArray的出现时间一致*/
+            color: black;
+            position: fixed;
+            font-size: 0px;
+            text-align: center;
+            z-index: 3;
+            font-weight: 550;
+            text-shadow: 5px 5px 5px #888888;
+        }
+        #M_text:hover{
+            transition-property: color;
+            transition-delay: 0.2s;
+            color:rgb(214, 10, 10);
+        }
+
+
+	.numbertext img{width: 500px;height: 650px;}
+	.HuanDeng{height: 650px;
 		position: relative;
 		display: inline-block;
-		
+		background: #717171
 	}
-	.dots{
-		position: absolute;
-		left: 47%;
+	.dots{		
+		left: 39%;
 		position: relative;
 		top: -20px;
+		
 	}
 	.last,.next{
 		width:30px;
 		cursor:pointer; /*鼠标移动到其上时的光标*/
 		position:absolute;
-		top: calc(50% + 80px); 
+		top: calc(50% - 20px); 
 		
 		display: none;
 		color:white;
@@ -148,65 +213,15 @@
 /* 淡出动画 */
 .numbertext {
   animation: fade;
-  animation-duration: 1.6s;
+  animation-duration: 2s;
 }
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .2} 
   to {opacity: 1}
 }
 	</style>
 	
-	<script>
-	
 
-		function Kchange()//换图
-		{
-			var s = document.getElementById('Kuonji');
-			s.src = s.src.match('Kuonji1')? "Kuonji2.png" : "Kuonji1.png";
-		}
-		function Rchange(x)
-		{
-			var rand = new Array();
-			var i;
-			for(i=0;i<6;i++)
-				rand[i]=i+".png";
-			var rpng=Math.round(Math.random()*4);
-			x.src="img/saber/"+rand[rpng];
-		}
-		function shubiao(x)
-		{
-			x.src="img/satsuki/satsuki_04.png";
-		}
-		function noshubiao(x)
-		{
-			x.src="img/satsuki/satsuki_02.png";
-		}
-		/*function join()
-		{
-			x=Date();
-			alert("今天是"+x);
-		}*/
-		function random()
-		{
-			var Gif = new Array(); 
-			var i;
-			for (i=0;i<5;i++)
-				Gif[i]="GIF/"+i+".gif";
-			var rGif=Math.round(Math.random()*4);
-			document.getElementById("r").src=Gif[rGif];
-		}
-		function shubiao1()
-			{
-				document.getElementById('last').style.display="block";
-				document.getElementById('next').style.display="block";
-			}
-			function noshubiao1()
-			{
-				document.getElementById('last').style.display="none";
-				document.getElementById('next').style.display="none";
-			}
-	
-	</script>
 </head>
 <body onload="random()"></body>
 	
@@ -231,7 +246,7 @@
 			
 			<li>鱼塘
 			<ul class="SecondMenu">
-					<li><a href="https://bbs.saraba1st.com/2b/forum-75-1.html" target="_black">扭曲死宅泥潭</a><hr></li>
+					<li><a href="https://bbs.saraba1st.com/2b/forum-75-1.html" target="_black">扭曲泥潭</a><hr></li>
 					<li><a href="http://bbs.ngacn.cc/thread.php?fid=540" target="_black">NGA<hr></a></li>
 					<li><a href="https://www.zhihu.com/" target="_black">编乎</a><hr></li>
 					<li><a href="https://tieba.baidu.com/" target="_black">贴吧</a><hr></li>
@@ -253,7 +268,7 @@
 					<li><a href="https://yandex.com/" target="_black">yandex</a></li>
 					<li><a href="https://fgo.wiki/w/%E9%A6%96%E9%A1%B5" target="_black">fgowiki</a><hr></li>
 					<li><a href="http://bangumi.tv/" target="_black">banggumi</a></li>
-					<li><a href="http://komicolle.dreamhosters.com/wiki5/?FrontPage" target="_black">FrontPage</a>
+					<li><a href="https://wiki.komica.org/%E9%A6%96%E9%A0%81" target="_black">KomicaWiki</a>
 					<li><a href="https://zh.moegirl.org/Mainpage" target="_black">萌娘百科</a></li>
 				</ul>
 			</li>
@@ -268,22 +283,21 @@
 			</li>
 			<li>里站
 				<ul class="SecondMenu">
-					<li><a href="https://nyaso.com/" target="_black">喵搜</a></li>
+					<li><a href="C:/Users/Administrator/Desktop/自制首页/1.html" target="_black">动画</a></li>
 					<li><a href="https://nyaa.si/" target="_black">Nyaa</a></li>
 				</ul>
 			</li>
 			<li><img id ="r" src="1.gif" width="90" height="50"></li>
 		</ul>	
 	</div>
-
-	<img id="satsuki"  onclick="huan()"  onmouseover="shubiao(this)" onmouseout="noshubiao(this)" src="img/satsuki/satsuki_02.png">
-	
+	<img id="satsuki"  onclick="huan()"  onmouseover="shubiao(this)" onmouseout="noshubiao(this)" src="https://tva4.sinaimg.cn/mw690/005CsXAuly1g8yp1fdrpuj304w04waau.jpg">
+	<div class="RightTiao"></div><div class="LeftTiao"></div>
 	<div class="HuanDeng" onmouseover="shubiao1()" onmouseout="noshubiao1()">	
-		<div class="numbertext"><img src="http://ww1.sinaimg.cn/large/005CsXAuly1g2ggb5c7ybj31nt21pnpf.jpg"></div>
-		<div class="numbertext"><img src="http://ww1.sinaimg.cn/large/005CsXAuly1g2ggbj0yw7j31iv1yxn59.jpg"></div>
-		<div class="numbertext"><img src="http://ww1.sinaimg.cn/large/005CsXAuly1g2ggbuyv0qj31lr2064qu.jpg"></div>
-		<div class="numbertext"><img src="http://ww1.sinaimg.cn/large/005CsXAuly1g2ggcs5e0cj31ly1zx1l2.jpg"></div>
-		<div class="numbertext"><img src="http://ww1.sinaimg.cn/large/005CsXAuly1g2ggbz5giqj31ll206kjp.jpg"></div>	
+		<div class="numbertext"><a  href="http://www.typemoon.com/products/mahoyo/"><img src="img/幻灯片/魔法使之夜/1.png"></a></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/2.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/3.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/4.png"></div>
+		<div class="numbertext"><img src="img/幻灯片/魔法使之夜/5.png"></div>	
 		<div class="last" id="last"onclick="LAST()"> &lt; </div>
 		<div class="next" id="next"onclick="NEXT()"> > </div>
 
@@ -299,9 +313,9 @@
 	<div id="lu"><img src="img/logo/lu.png"></div>
 
 	<div class="waifu">
-        <div class="waifu-tips"></div>
+        <!-- <div class="waifu-tips"></div> -->
         <canvas id="live2d" class="live2d"></canvas>
-    	 <div class="waifu-tool">
+    	<!-- <div class="waifu-tool">
             <span class="fui-home"></span>
             <span class="fui-chat"></span>
             <span class="fui-eye"></span>
@@ -309,10 +323,21 @@
             <span class="fui-photo"></span>
             <span class="fui-info-circle"></span>
             <span class="fui-cross"></span>
-        </div> 
+        </div> -->
     </div>
 
-	<img id="saber" onclick="Rchange(this)" src="img/saber/0.png" >
+	<div id="Dright_div" onmouseenter="showMagic()" onmouseleave="hideMagic()"><img id="Dright"src="http://images2017.cnblogs.com/blog/841250/201709/841250-20170914132721735-572062833.png"	onclick="ShowTab()">
+		
+	
+	<img id="MagicArray" src="http://images2017.cnblogs.com/blog/841250/201709/841250-20170914132726032-1459872254.png" onclick="ShowTab()">
+	<a name="Tab" id="Tab1" href="" style="right:116px;bottom:200px;" target="_black"><span id="M_text">博客园</span></a>
+	<a name="Tab" id="Tab1" href="file:///C:/Users/Administrator/Desktop/%E8%87%AA%E5%88%B6%E9%A6%96%E9%A1%B5/index.html" style="right:184px;bottom:165px;" target="_black"><span id="M_text">首页</span></a>
+	<a name="Tab" id="Tab1" href="https://bbs.saraba1st.com/2b/forum-6-1.html" style="right:64px;bottom:165px;" target="_black"><span id="M_text">S1</span></a>
+	<a name="Tab" id="Tab1" href="" style="right:184px;bottom:94px;" target="_black"><span id="M_text">目录</span></a>
+	<a name="Tab" id="Tab1" href="https://t.bilibili.com/?tab=8" style="right:60px;bottom:94px;" target="_black"><span id="M_text">B站</span></a>
+	<a name="Tab" id="Tab1" href="https://translate.google.cn/?hl=en#auto/zh-CN/" style="right:105px;bottom:58px;" target="_black"><span id="M_text">谷歌翻译</span></a>
+	</div>
+	<!-- <img id="saber" onclick="Rchange(this)" src="img/saber/0.png" > -->
 	
 </body>
 </html>
@@ -372,3 +397,112 @@
 	/* 在 initModel 前添加 */
 	initModel("assets/waifu-tips.json?v=1.4.2")
 </script>
+	<script>
+		 function showMagic() {
+        var w = "280px";
+        M_img = document.getElementById("MagicArray");
+        M_img.style.width = w;
+        M_img.style.height = w;
+        M_img.style.bottom = "0px";
+        M_img.style.right = "0px";
+        M_img.style.transform = "rotate(360deg)";
+
+        dy = document.getElementsByName("Tab");
+        var Mtext;
+        for (var i = 0; i < dy.length; i++) {
+            Mtext = dy[i];
+            Mtext.style.fontSize = "20px";
+            Mtext.style.transitionDelay = "0.55s";
+        }
+
+    }
+    function hideMagic() {
+        M_img = document.getElementById("MagicArray");
+        M_img.style.width = "0px";
+        M_img.style.height = "0px";
+        M_img.style.bottom = "100px";
+        M_img.style.right = "140px";
+        M_img.style.transform = "rotate(0deg)";
+
+        dy = document.getElementsByName("Tab");
+        var Mtext;
+        for (var i = 0; i < dy.length; i++) {
+            Mtext = dy[i];
+            Mtext.style.fontSize = "0px";
+            Mtext.style.transitionDelay = "0s";
+        }
+    }
+    function ShowTab() {
+        /*=当图宽和高度变化时需改变图片坐标已显得图片由中心缩放*/
+        var w = "280px";
+        dx = document.getElementById("MagicArray");
+        if (dx.width == 0) {
+            dx.style.width = w;
+            dx.style.height = w;
+            dx.style.bottom = "0px";
+            dx.style.right = "0px";
+            dx.style.transform = "rotate(360deg)";
+        } else {
+
+            dx.style.width = "0px";
+            dx.style.height = "0px";
+            dx.style.bottom = "100px";
+            dx.style.right = "140px";
+            dx.style.transform = "rotate(0deg)";
+        }
+
+        dy = document.getElementsByName("Tab");
+        for (var i = 0; i < dy.length; i++) {
+            dx = dy[i];
+            if (dx.style.fontSize == "20px") {
+                dx.style.fontSize = "0px";
+                dx.style.transitionDelay = "0s";
+            } else {
+                dx.style.fontSize = "20px";
+                dx.style.transitionDelay = "0.55s";
+            }
+        }
+    }
+		function Rchange(x)
+		{
+			var rand = new Array();
+			var i;
+			for(i=0;i<6;i++)
+				rand[i]=i+".png";
+			var rpng=Math.round(Math.random()*4);
+			x.src="img/saber/"+rand[rpng];
+		}
+		function shubiao(x)
+		{
+			x.src="https://tvax2.sinaimg.cn/mw690/005CsXAuly1g8yoxax6jbj304w04waau.jpg";
+		}
+		function noshubiao(x)
+		{
+			x.src="https://tva4.sinaimg.cn/mw690/005CsXAuly1g8yp1fdrpuj304w04waau.jpg";
+		}
+		/*function join()
+		{
+			x=Date();
+			alert("今天是"+x);
+		}*/
+		function random()
+		{
+			var Gif = new Array(); 
+			var i;
+			for (i=0;i<5;i++)
+				Gif[i]="GIF/"+i+".gif";
+			var rGif=Math.round(Math.random()*4);
+			document.getElementById("r").src=Gif[rGif];
+		}
+		function shubiao1()
+			{
+				document.getElementById('last').style.display="block";
+				document.getElementById('next').style.display="block";
+			}
+			function noshubiao1()
+			{
+				document.getElementById('last').style.display="none";
+				document.getElementById('next').style.display="none";
+			}
+	
+	</script>
